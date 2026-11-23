@@ -1,4 +1,3 @@
-
 package database;
 
 import java.sql.Connection;
@@ -8,7 +7,7 @@ import java.sql.SQLException;
 public class DBConnection {
 
     private static final String URL =
-        System.getenv("DB_URL");
+        "jdbc:mysql://campuscomplaintdb-1djc4e.db.enzonic.com:3306/main?sslMode=REQUIRED";
 
     private static final String USER =
         System.getenv("DB_USER");
@@ -20,11 +19,9 @@ public class DBConnection {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            if (URL == null || USER == null || PASSWORD == null) {
-                throw new SQLException("Database settings missing.");
-            }
-
-            return DriverManager.getConnection(URL, USER, PASSWORD);
+            return DriverManager.getConnection(
+                URL, USER, PASSWORD
+            );
 
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
