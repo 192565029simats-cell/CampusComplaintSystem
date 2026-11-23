@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(135deg, #163b72, #4389c9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            width: 380px;
+            border-radius: 12px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #163b72;
+        }
+
+        input {
+            width: 100%;
+            padding: 11px;
+            margin: 8px 0 14px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #163b72;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Student Registration</h2>
+
+    <form action="register" method="post">
+
+        <label>Student Name</label>
+        <input type="text" name="name" required>
+
+        <label>Register Number</label>
+        <input type="text" name="registerNumber" required>
+
+        <label>Department</label>
+        <input type="text" name="department" required>
+
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Phone</label>
+        <input type="tel" name="phone" required>
+
+        <label>Password</label>
+        <input type="password" name="password" required>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <p style="text-align:center">
+        Already registered?
+        <a href="index.html">Login</a>
+    </p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Submit Complaint</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            background: white;
+            max-width: 600px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px #ccc;
+        }
+
+        h2 {
+            text-align: center;
+            color: #1d4ed8;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 11px;
+            margin-top: 7px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        textarea {
+            height: 120px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 22px;
+            padding: 13px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Submit Campus Complaint</h2>
+
+    <form action="submitComplaint" method="post">
+
+        <label>Complaint Title</label>
+        <input type="text" name="title"
+               maxlength="150" required>
+
+        <label>Category</label>
+        <select name="category" required>
+            <option value="">Select Category</option>
+            <option value="Infrastructure">Infrastructure</option>
+            <option value="Electrical">Electrical</option>
+            <option value="Water Supply">Water Supply</option>
+            <option value="Internet">Internet</option>
+            <option value="Cleanliness">Cleanliness</option>
+            <option value="Academic">Academic</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label>Description</label>
+        <textarea name="description"
+                  maxlength="5000"
+                  required></textarea>
+
+        <label>Location</label>
+        <input type="text" name="location"
+               maxlength="150"
+               placeholder="Enter complaint location">
+
+        <label>Priority</label>
+        <select name="priority">
+            <option value="Low">Low</option>
+            <option value="Medium" selected>Medium</option>
+            <option value="High">High</option>
+            <option value="Urgent">Urgent</option>
+        </select>
+
+        <button type="submit">Submit Complaint</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
