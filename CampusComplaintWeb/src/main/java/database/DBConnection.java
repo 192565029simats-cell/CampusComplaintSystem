@@ -8,24 +8,25 @@ import java.sql.SQLException;
 public class DBConnection {
 
     private static final String URL =
-        "jdbc:mysql://localhost:3306/campus_complaint_db";
+        System.getenv("DB_URL");
 
-    private static final String USER = "root";
+    private static final String USER =
+        System.getenv("DB_USER");
 
-    // Enter your updated MySQL password here
-    private static final String PASSWORD = "naveen@9696";
+    private static final String PASSWORD =
+        System.getenv("DB_PASSWORD");
 
     public static Connection getConnection() {
-
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            return DriverManager.getConnection(
-                URL, USER, PASSWORD
-            );
+            if (URL == null || USER == null || PASSWORD == null) {
+                throw new SQLException("Database settings missing.");
+            }
+
+            return DriverManager.getConnection(URL, USER, PASSWORD);
 
         } catch (ClassNotFoundException | SQLException e) {
-
             e.printStackTrace();
             return null;
         }
